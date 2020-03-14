@@ -1,0 +1,28 @@
+//- Подключаем переменные
+include pug/includes/_var.pug  
+
+//- #{address} образец как вставлять переменную pug
+
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="css/style.min.css")
+        link(rel="shortcut icon" href="icons/favicon.png" type="image/png")
+        title #{myTitle}
+    body
+        main
+            header
+                include pug/block/_header.pug
+            content
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores rem vel nemo repellat in. Dolore, vel at! Quos assumenda sit, laborum culpa, debitis itaque ea tempora magnam repellat modi iste.
+                    
+
+                
+            
+            
+
+            footer
+                include pug/block/_footer.pug

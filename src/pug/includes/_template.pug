@@ -1,0 +1,32 @@
+//- Подключаем переменные
+block config
+    include _var.pug  
+
+//- #{address} образец как вставлять переменную pug
+
+
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        title #{myTitle}
+        block metategs
+            meta(name="viewport", content="width=device-width, initial-scale=1.0")
+            meta(name="description" content= myDesc )
+            meta(name="keywords" content= mykeywords) 
+        block links
+            link(rel="stylesheet", href=csspatch+"style.min.css")
+            link(href=icopatch+"favicon.ico" type="image/x-icon" rel="icon")
+            
+        
+    body
+
+    header
+        include ../block/_header.pug
+
+    
+    block content
+        
+    
+    footer
+        include ../block/_footer.pug
