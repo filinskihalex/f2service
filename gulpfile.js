@@ -7,6 +7,8 @@ const rename = require("gulp-rename");
 const pug = require('gulp-pug');
 const imagemin = require('gulp-imagemin');
 const htmlmin = require('gulp-htmlmin');
+const del    = require('del');
+// const scp  = require('gulp-scp2');
 
 // Настраиваем Обновление страницы в барузере
 
@@ -71,6 +73,10 @@ gulp.task('watch', function() {
 })
 
 
+gulp.task('clean', function() {
+	return del.sync('dist'); // Удаляем папку dist перед сборкой
+});
+
 // Минимизируем файлы HTML и складываем в dist
 
 gulp.task('html-index',function() {
@@ -86,6 +92,8 @@ gulp.task('html-page',function() {
 });
 
 // Копируем данные в dist
+
+
 
 gulp.task('scripts',function() {
     return gulp.src('src/js/**/*.js')
@@ -115,6 +123,11 @@ gulp.task('image',function() {
         .pipe(gulp.dest('dist/img'));
 });
 
+
+
+
 //Запускаем задачу на отслеживание
 
-gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'pug-index', 'pug-page', 'html-index', 'scripts', 'fonts', 'icons', 'mailer', 'image', 'html-page' ));
+gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'pug-index', 'pug-page', 'clean', 'html-index', 'html-page', 'scripts', 'fonts', 'icons', 'mailer', 'image'  ));
+
+

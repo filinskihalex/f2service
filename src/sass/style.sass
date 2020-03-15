@@ -1,5 +1,5 @@
-@import "libs/_bootstrap-reboot.min"
-@import "libs/_bootstrap-grid.min"
+// @import "libs/_bootstrap-reboot.min"
+// @import "libs/_bootstrap-grid.min"
 @import "libs/_fonts"    
 @import "includes/vars"
 @import "includes/_mixin"
@@ -8,9 +8,28 @@
 *
     font-family: 'Roboto', sans-seif
     box-sizing: border-box
+    margin: 0
+    padding: 0
+
+.content
+    padding: 10px 20px
+    border: 1px solid
+       
+main.grid
+        display: grid
+        grid-gap: 1em
+        grid: auto 2fr auto / 1fr 3fr 1fr
+        width: 1140px
+        margin: 0 auto
+    
+section
+    grid-column: span 2
+    
+     
+
 
 @import block/_header
-@import block/_content
+@import block/_html_css
 @import block/_footer
 
 

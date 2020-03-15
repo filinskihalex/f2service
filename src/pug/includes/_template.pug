@@ -6,7 +6,7 @@ block config
 
 
 <!DOCTYPE html>
-html(lang="en")
+html(lang=lang)
     head
         meta(charset="UTF-8")
         title #{myTitle}
@@ -20,13 +20,15 @@ html(lang="en")
             
         
     body
+        main.grid
+            header
+                include ../block/_header.pug
 
-    header
-        include ../block/_header.pug
+            section
+                block content
+            
+            sidebar
 
-    
-    block content
         
-    
-    footer
-        include ../block/_footer.pug
+            footer
+                include ../block/_footer.pug

@@ -1,4 +1,5 @@
 header
+    grid-column: span 3
     position: relative
     nav
         height: 50px
@@ -20,10 +21,23 @@ header
             &_list
                 // border-right: 2px dotted red
                 // padding-right: 28px
+        ul
+            .dropdown
+                display: none
+                position: absolute
+                top: 100%
+                &:hover
+                    display: inherit
+            
     .subheader
         width: 100%
-        height: 84px
-        background-color: $second_color
+        // background: url(https://3.bp.blogspot.com/-Ib-43Ouy-wc/W_cF8fY0rxI/AAAAAAAAAAQ/ZXti4zIxW8g_gexKVhvnCw-lbf2ltFzDgCK4BGAYYCw/s1600/1.jpg) center center/cover no-repeat
+        display: grid
+        grid: 1fr / 1fr 1fr 1fr
+        padding: 10px 0;
+
+        .wrapper
+            text-align: center
         
         &_logo
             display: block
@@ -36,11 +50,12 @@ header
             font-weight: 400
             margin-top: 6px
         &_call
-            color: #000000
             font-size: 12px
             font-weight: 300
-            margin-top: 19px
+            margin-top: 10px
+            text-align: center
         &_phone
+            display: block
             margin-top: 8px
             color: #000000
             font-size: 22px
@@ -56,8 +71,9 @@ header
             width: 172px
             height: 46px
             box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.12)
-            background-image: linear-gradient(to top, #1eacc7 0%, #4ce2ff 100%)
-            margin-top: 19px
+            background-image: linear-gradient(to top, #f8f7f7 0%, #33669a 100%)
+            margin: 19px auto;
             border-radius: 6px
             border: none
             @include btn_hover
+            cursor: pointer

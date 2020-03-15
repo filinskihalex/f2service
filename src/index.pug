@@ -4,7 +4,7 @@ include pug/includes/_var.pug
 //- #{address} образец как вставлять переменную pug
 
 <!DOCTYPE html>
-html(lang="ru")
+html(lang=lang)
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -13,16 +13,16 @@ html(lang="ru")
         link(rel="shortcut icon" href="icons/favicon.png" type="image/png")
         title #{myTitle}
     body
-        main
+        
+        main.grid
             header
                 include pug/block/_header.pug
-            content
-                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores rem vel nemo repellat in. Dolore, vel at! Quos assumenda sit, laborum culpa, debitis itaque ea tempora magnam repellat modi iste.
-                    
 
-                
+            section
+                block content
             
-            
+            sidebar
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam sint voluptatem magni soluta temporibus veritatis incidunt iste, hic quisquam doloremque saepe. Nesciunt consectetur beatae maxime veniam aspernatur ab dolor molestiae!
 
             footer
                 include pug/block/_footer.pug

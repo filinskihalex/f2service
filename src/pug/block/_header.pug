@@ -1,16 +1,11 @@
 .subheader
-    .container
-        .row
-            .col-md-4.offset-md-1 
-                a.subheader_logo(href="www.f2service.ru")
-                    img(src=icopatch+"logo.png", alt="logo")
-                .subheader_official Услуги Системного администрирования
-            .col-md-3.offset-md-1 
-                .subheader_call Звоните нам ежедневно
-                a.subheader_phone(href="tel:+79789653689") +7 978-965-36-89
-            .col-md-2  
-                button.subheader_btn заказать звонок
-
+    .wrapper
+        a.subheader_logo(href="f2service.ru")
+            img(src=icopatch+"logo.png", alt="logo")
+        .subheader_official Услуги Системного администрирования
+    .subheader_call Звоните нам ежедневно
+        a.subheader_phone(href="tel:+1111111") +7 978-1111111
+    button.subheader_btn Отправить заявку
 
 nav
     .container
@@ -19,8 +14,13 @@ nav
                 a.menu_link(href=htmlpatch+"index.html") Главная
             li.menu_list
                 a.menu_link(href="/html/CSS.html")   WEb разработка
+                ul.dropdown
+                    li.menu_list 
+                        a(href="#") HTML
+                    li
+                        a(href="#") Git
             li.menu_list
-                 a.menu_link(href="#")  Администрирование
+                 a.menu_link(href="/html/html.html")  Администрирование
             li.menu_list
                  a.menu_link(href="#")  Требования
             li.menu_list
