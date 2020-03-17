@@ -9,6 +9,8 @@ const imagemin = require('gulp-imagemin');
 const htmlmin = require('gulp-htmlmin');
 const del    = require('del');
 // const scp  = require('gulp-scp2');
+const sourcemaps = require('gulp-sourcemaps');
+const notify = require('gulp-notify');
 
 // Настраиваем Обновление страницы в барузере
 
@@ -28,14 +30,19 @@ gulp.task('server', function() {
 gulp.task('styles', function() {
     return gulp.src("src/sass/*.+(scss|sass)")
     // Создаем несжатый файл style.css
-        .pipe(sass({outputStyle: "nested"}).on('error', sass.logError))
+        .pipe(sourcemaps.init())
+        .pipe(sass({outputStyle: "nested"}).on('error', notify.onError()))
         .pipe(autoprefixer())
         .pipe(gulp.dest("src/css"))
     // Создаем сжатый файл в dist и добавляем префикс min
-        .pipe(sass({outputStyle: "compressed"}).on('error', sass.logError))
+        .pipe(sass({outputStyle: "compressed"}).on('error', notify.onError()))
         .pipe(rename({suffix: '.min', prefix: ''}))
         .pipe(autoprefixer())
-        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(cleanCSS({compatibility: '*' , 
+            level: { 1: { specialComments: false } } 
+            }
+            ))
+        // .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest("dist/css"))
         .pipe(browserSync.stream());
 });
