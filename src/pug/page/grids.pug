@@ -1,0 +1,17 @@
+extend ../includes/_template.pug 
+
+append config
+        - var myTitle = 'svg'
+        - var myDesc = 'svg'
+        - var mykeywords = 'Что такое "сетки" и преобразование иконок в SVG формат'
+        - var csspatch = '../css/'
+        - var icopatch = '../icons/'
+        - var htmlpatch = '../'
+
+append content
+    .content
+        ul
+            li  
+                a(href="html_prav.html") Правила HTML
+            li
+                a(href="list_class.html") Рекомендуемые названия классов

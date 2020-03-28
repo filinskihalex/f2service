@@ -42,7 +42,7 @@ gulp.task('styles', function() {
             level: { 1: { specialComments: false } } 
             }
             ))
-        // .pipe(sourcemaps.write('.'))
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest("dist/css"))
         .pipe(browserSync.stream());
 });
