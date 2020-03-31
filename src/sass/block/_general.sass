@@ -6,7 +6,8 @@
 
 .content
     padding: 10px 20px
-    border: 1px solid
+    border: 1px solid $main_color
+    border-radius: 5px
        
 main.grid
         display: grid
@@ -18,3 +19,11 @@ main.grid
 section
     grid-column: span 2
     
+.question
+    @include question
+.answer
+    @include answer
+.code
+    @include code
+.wrap_code
+    @include wrap_code

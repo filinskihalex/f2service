@@ -336,7 +336,8 @@ template {
 
 .content {
   padding: 10px 20px;
-  border: 1px solid; }
+  border: 1px solid #33669A;
+  border-radius: 5px; }
 
 main.grid {
   display: grid;
@@ -348,6 +349,43 @@ main.grid {
 section {
   grid-column: span 2; }
 
+.question {
+  border: 5px solid;
+  border-color: #F5A623;
+  border-radius: 4px;
+  font-size: 20px;
+  padding: 20px 40px 20px 80px;
+  min-height: 50px;
+  background: url(../img/question.png) no-repeat;
+  background-position: 5px;
+  margin-bottom: 20px; }
+
+.answer {
+  border: 5px solid;
+  border-color: #27ae60;
+  border-radius: 4px;
+  padding: 20px 40px 20px 80px;
+  min-height: 50px;
+  background: url(../img/lamp.png) no-repeat;
+  background-position: 5px;
+  margin-bottom: 20px; }
+  .answer p {
+    margin-top: 10px; }
+
+.code {
+  border-left: 10px solid #33669A;
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: whitesmoke;
+  color: #33669A; }
+
+.wrap_code {
+  border: 2px solid #33669A;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px 10px;
+  width: 60%; }
+
 header {
   grid-column: span 3;
   position: relative; }
@@ -355,7 +393,8 @@ header {
     display: none; }
   header nav {
     height: 50px;
-    background-color: #33669A; }
+    background-color: #33669A;
+    border-radius: 5px; }
     header nav .menu {
       display: flex;
       justify-content: space-around;

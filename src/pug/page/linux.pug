@@ -1,0 +1,23 @@
+extend ../includes/_template.pug 
+
+append config
+        - var myTitle = 'Linux'
+        - var myDesc = 'Linux'
+        - var mykeywords = 'Linux'
+        - var csspatch = '../css/'
+        - var icopatch = '../icons/'
+        - var htmlpatch = '../'
+
+append content
+    .content
+        .acticle
+            .question
+                | Как запустить файл из командной строки в Linux?
+            .answer
+                | Можно выполнить (запустить) файл в командной строке, набрав команду:
+                .code
+                    | sh название-файла
+                p Пример
+                .code
+                    | sh /var/www/tv.sh
+                    

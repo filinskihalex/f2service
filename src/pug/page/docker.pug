@@ -1,0 +1,36 @@
+extend ../includes/_template.pug 
+
+append config
+        - var myTitle = 'Основные команды docker'
+        - var myDesc = 'Docker'
+        - var mykeywords = 'Основные команды docker'
+        - var csspatch = '../css/'
+        - var icopatch = '../icons/'
+        - var htmlpatch = '../'
+
+append content
+    .content
+        .wrap_code
+            .p Просмотр images в docker
+            .code
+                | docker images
+        .wrap_code
+            .p Удаление image
+            .code
+                | docker rmi nginx:01
+        .wrap_code
+            .p Вход в контейнер
+            .code
+                | docker exec -i -t 6ee6223a3ce3 bash
+        .wrap_code
+            .p Сборка image
+            .code
+                | docker build -t nginx:01 .
+        .wrap_code
+            .p запуск image
+            .code
+                | docker run --rm -d -p 80:80 nginx:01
+        .wrap_code
+            .p Копирование из хоста в контейнер
+            .code
+                | docker cp file.txt 4f20e373e04b:/root      

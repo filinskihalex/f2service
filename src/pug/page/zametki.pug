@@ -1,0 +1,16 @@
+extend ../includes/_template.pug 
+
+append config
+        - var myTitle = 'Заметки Html'
+        - var myDesc = 'Docker'
+        - var mykeywords = 'Основные команды docker'
+        - var csspatch = '../css/'
+        - var icopatch = '../icons/'
+        - var htmlpatch = '../'
+
+append content
+    .content
+        .wrap_code
+            .p Просмотр images в docker
+            .code
+                | docker images
