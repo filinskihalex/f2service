@@ -28,7 +28,7 @@ gulp.task('server', function() {
 // Настраиваем SASS
 
 gulp.task('styles', function() {
-    return gulp.src("src/sass/*.+(scss|sass)")
+    return gulp.src("src/sass/**/*.+(scss|sass)")
     // Создаем несжатый файл style.css
         .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: "nested"}).on('error', notify.onError()))
@@ -70,7 +70,7 @@ gulp.task('pug-page', function buildHTML() {
 //Мониторинг изменения файлов и запускаем задачу
 
 gulp.task('watch', function() {
-    gulp.watch("src/sass/*.+(scss|sass)", gulp.parallel('styles'))
+    gulp.watch("src/sass/**/*.+(scss|sass)", gulp.parallel('styles'))
     gulp.watch("src/*.pug", gulp.parallel('pug-index'));
     gulp.watch("src/pug/page/*.pug", gulp.parallel('pug-page'));
     gulp.watch("src/*.html", gulp.parallel('html-index'));
