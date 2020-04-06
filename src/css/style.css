@@ -467,6 +467,26 @@ header {
   .html_rules h1 {
     text-align: center; }
 
+.card__items {
+  display: grid;
+  grid: auto / 1fr 1fr 1fr;
+  gap: 10px;
+  text-align: center;
+  list-style: none; }
+
+.card__item {
+  border: 1px solid #33669A;
+  border-radius: 5px; }
+
+.card__link {
+  text-decoration: none; }
+
+.card__title {
+  margin: 5px 0; }
+
+.card__img {
+  max-width: 100%; }
+
 footer {
   width: 100%;
   background-color: #F8F8FF;

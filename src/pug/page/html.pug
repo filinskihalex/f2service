@@ -10,10 +10,19 @@ append config
 
 append content
     .content
-        ul
-            li  
-                a(href="html_prav.html") Правила HTML
-            li
-                a(href="list_class.html") Рекомендуемые названия классов
-            li
-                a(href="zametki.html") ЗАметки Html
+        .card
+            ul.card__items
+                li.card__item
+                    a.card__link(href="html_prav.html") 
+                        h3.card__title Правила HTML
+                        img.card__img(src="../img/html/html.jpg", alt="html")
+                li
+                    a(href="list_class.html") Рекомендуемые названия классов
+                li
+                    a(href="zametki.html") ЗАметки Html
+                li
+                    a(href="#") Линукс
+                li.card__item
+                    a.card__link(href="#")
+                        h3.card__title CSS
+                        img.card__img(src="../img/html/css.jpg", alt="")
