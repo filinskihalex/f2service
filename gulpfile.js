@@ -75,8 +75,8 @@ gulp.task('watch', function() {
     gulp.watch("src/pug/page/*.pug", gulp.parallel('pug-page'));
     gulp.watch("src/*.html", gulp.parallel('html-index'));
     gulp.watch("src/html/*.html", gulp.parallel('html-page'));
-    gulp.watch("src/icons/*", gulp.parallel('icons'));
-    gulp.watch("src/img/*", gulp.parallel('image'));
+    gulp.watch("src/icons/**/*", gulp.parallel('icons'));
+    gulp.watch("src/img/**/*", gulp.parallel('image'));
 })
 
 

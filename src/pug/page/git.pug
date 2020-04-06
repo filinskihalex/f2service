@@ -6,7 +6,31 @@ append config
         - var mykeywords = 'Git gulp'
         - var csspatch = '../css/'
         - var icopatch = '../icons/'
+        - var image = '../img/git/new_project/'
         - var htmlpatch = '../'
 
 append content
+        .content
+                h2 Создаем репозиторий на проект
+                p Создаем паку под проект
+                img(src= image +"folder.png", alt="folder")
+                p Переходим в папку нажимае правой кнопкой и открываем окно терминала Git Bush
+                img(src= image + "menu.png", alt="menu")
+                p Вводим комнду git init
+                img(src= image + "init.png", alt="init")
+                p Создаем тестовый файл и запускаем команду git status
+                img(src= image + "status.png", alt="status")
+                p Добавляем файлы в контрольную точку Git add -A
+                p Просматриваем что файлы добавились в проект Git status
+                img(src= image + "add.png", alt="add")
+                p Создаем контрольную точку Git commit -a -m"new"
+                img(src= image + "commit.png", alt="commit")
+                p Есть два варианта создания репозитория
+                        ul
+                                li С помошью командной консоли
+                                li На самом сайте https://github.com
         
+                p Заходим на сайт https://github.com  Логинимся и создаем новый репозиторий
+                img(src=image + "new_repository.png", alt="repository")
+
+

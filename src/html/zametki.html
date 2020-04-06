@@ -45,8 +45,25 @@
       <section>
         <div class="content">
           <div class="wrap_code">
-            <div class="p">Просмотр images в docker</div>
-            <div class="code">docker images</div>
+            <div class="p">Указываем контейнер Flex , содержимое выставляем в колонки и прижимаем к правому краю.</div>
+            <div class="code">
+              <p>display: flex;</p>
+              <p>flex-direction: column;</p>
+              <p>align-items: flex-end;</p>
+            </div>
+          </div>
+          <div class="wrap_code">
+            <div class="p">Выставляем контейнеры горизонтально с равномерным распрелением</div>
+            <div class="code">justify-content: space-between</div>
+          </div>
+          <div class="wrap_code">
+            <div class="p">Запись nth-child в pug </div>
+            <div class="code">
+               input
+                 margin-bottom: 15px
+                 &:nth-child(3)
+                     margin-bottom: 20px
+            </div>
           </div>
         </div>
       </section>
