@@ -60,7 +60,7 @@ gulp.task('pug-index', function buildHTML() {
 // Cобираем страницы
 
 gulp.task('pug-page', function buildHTML() {
-    return gulp.src("src/pug/page/*.pug")
+    return gulp.src("src/pug/page/**/*.pug")
     .pipe(pug({pretty: true}))
     .pipe(gulp.dest("src/html"))
     .pipe(browserSync.stream());
@@ -72,9 +72,9 @@ gulp.task('pug-page', function buildHTML() {
 gulp.task('watch', function() {
     gulp.watch("src/sass/**/*.+(scss|sass)", gulp.parallel('styles'))
     gulp.watch("src/*.pug", gulp.parallel('pug-index'));
-    gulp.watch("src/pug/page/*.pug", gulp.parallel('pug-page'));
+    gulp.watch("src/pug/page/**/*.pug", gulp.parallel('pug-page'));
     gulp.watch("src/*.html", gulp.parallel('html-index'));
-    gulp.watch("src/html/*.html", gulp.parallel('html-page'));
+    gulp.watch("src/html/**/*.html", gulp.parallel('html-page'));
     gulp.watch("src/icons/**/*", gulp.parallel('icons'));
     gulp.watch("src/img/**/*", gulp.parallel('image'));
 })
@@ -93,7 +93,7 @@ gulp.task('html-index',function() {
 });
 
 gulp.task('html-page',function() {
-    return gulp.src('src/html/*.html')
+    return gulp.src('src/html/**/*.html')
         .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(gulp.dest('dist/html'));
 });

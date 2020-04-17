@@ -33,4 +33,12 @@ append content
         .wrap_code
             .p Копирование из хоста в контейнер
             .code
-                | docker cp file.txt 4f20e373e04b:/root      
+                | docker cp file.txt 4f20e373e04b:/root
+        .wrap_code
+            .p Сохранение контейнера
+            .code
+                | docker commit nginx web
+        
+
+
+        

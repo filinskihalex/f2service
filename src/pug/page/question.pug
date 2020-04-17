@@ -1,0 +1,21 @@
+extend ../includes/_template.pug 
+
+append config
+        - var myTitle = 'Вопросы ответы'
+        - var myDesc = 'Docker'
+        - var mykeywords = 'Основные команды docker'
+        - var csspatch = '../css/'
+        - var icopatch = '../icons/'
+        - var htmlpatch = '../'
+
+
+append content
+    .content
+        .acticle
+            .question
+                | denied: requested access to the resource is denied
+            .answer
+                | Необходимо произвести регистрацию на DockerHub
+                .code
+                    |  docker login
+                
