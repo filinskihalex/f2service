@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Основные команды docker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Docker"/>
+    <meta name="keywords" content="Основные команды docker"/>
+    <link rel="stylesheet" href="../css/style.min.css"/>
+    <link href="../icons/favicon.ico" type="image/x-icon" rel="icon"/>
+  </head>
+  <body>
+    <main class="grid">
+      <header>
+        <div class="subheader">
+          <div class="wrapper"><a class="subheader_logo" href="http://f2service.ru"><img src="../icons/logo.png" alt="logo"/></a>
+            <div class="subheader_official">Услуги Системного администрирования</div>
+          </div>
+          <div class="subheader_call">Звоните нам ежедневно<a class="subheader_phone" href="tel:+1111111">+7 978-1111111</a></div>
+          <button class="subheader_btn">Отправить заявку</button>
+        </div>
+        <nav>
+          <div class="container">
+            <ul class="menu">
+              <li class="menu__list"><a class="menu__link" href="../index.html">Главная</a>
+                <ul class="menu__drop">
+                  <li class="menu__drop__list">1</li>
+                  <li class="menu__drop__list">2</li>
+                </ul>
+              </li>
+              <li class="menu__list"><a class="menu__link" href="#">  WEb разработка</a>
+                <ul class="menu__drop">
+                  <li class="menu__drop__list"><a href="../html.html">HTML</a></li>
+                  <li class="menu__drop__list"><a href="#">Git</a></li>
+                </ul>
+              </li>
+              <li class="menu__list"><a class="menu__link" href="/html/html.html"> Администрирование</a>
+                <ul class="menu_drop"></ul>
+              </li>
+              <li class="menu__list"><a class="menu_link" href="http://file.f2service.ru"> Скачать ПО</a></li>
+              <li class="menu__list"><a class="menu_link" href="/html/contact.html"> Контакты</a></li>
+              <li class="menu__list"><a class="menu_link" href="/html/docker.html">Docker</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <section>
+        <div class="content">
+          <div class="wrap_code">
+            <div class="p">Просмотр images в docker</div>
+            <div class="code">docker images</div>
+          </div>
+          <div class="wrap_code">
+            <div class="p">Удаление image</div>
+            <div class="code">docker rmi nginx:01</div>
+          </div>
+          <div class="wrap_code">
+            <div class="p">Вход в контейнер</div>
+            <div class="code">docker exec -i -t 6ee6223a3ce3 bash</div>
+          </div>
+          <div class="wrap_code">
+            <div class="p">Сборка image</div>
+            <div class="code">docker build -t nginx:01 .</div>
+          </div>
+          <div class="wrap_code">
+            <div class="p">запуск image</div>
+            <div class="code">docker run --rm -d -p 80:80 nginx:01</div>
+          </div>
+          <div class="wrap_code">
+            <div class="p">Копирование из хоста в контейнер</div>
+            <div class="code">docker cp file.txt 4f20e373e04b:/root</div>
+          </div>
+          <div class="wrap_code">
+            <div class="p">Сохранение контейнера</div>
+            <div class="code">docker commit nginx web</div>
+          </div>
+        </div>
+      </section>
+      <sidebar></sidebar>
+      <footer>
+        <nav>
+          <div class="container">
+            <ul class="menu">
+              <li class="menu_list"><a class="menu_link" href="../index.html">Главная</a></li>
+              <li class="menu_list"><a class="menu_link" href="/html/CSS.html">  WEb разработка</a></li>
+              <li class="menu_list"><a class="menu_link" href="#"> Администрирование</a></li>
+              <li class="menu_list"><a class="menu_link" href="#"> Требования</a></li>
+              <li class="menu_list"><a class="menu_link" href="/html/contact.html"> Контакты</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="container">
+          <div class="copyraiting"> Copyright © 2020 <a href="www.f2service.ru" target="_blank">www.f2service.ru</a></div>
+          <div class="social"></div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

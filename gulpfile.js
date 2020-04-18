@@ -51,18 +51,18 @@ gulp.task('styles', function() {
 // Настраиваем Pug
 // Собираем главную страницу
 
-gulp.task('pug-index', function buildHTML() {
-    return gulp.src("src/*.pug")
-    .pipe(pug({pretty: true}))
-    .pipe(gulp.dest("src/"))
-    .pipe(browserSync.stream());
-});
+// gulp.task('pug-index', function buildHTML() {
+//     return gulp.src("src/*.pug")
+//     .pipe(pug({pretty: true}))
+//     .pipe(gulp.dest("src/"))
+//     .pipe(browserSync.stream());
+// });
 // Cобираем страницы
 
 gulp.task('pug-page', function buildHTML() {
     return gulp.src("src/pug/page/**/*.pug")
     .pipe(pug({pretty: true}))
-    .pipe(gulp.dest("src/html"))
+    .pipe(gulp.dest("src/pages"))
     .pipe(browserSync.stream());
 });
 
@@ -71,12 +71,13 @@ gulp.task('pug-page', function buildHTML() {
 
 gulp.task('watch', function() {
     gulp.watch("src/sass/**/*.+(scss|sass)", gulp.parallel('styles'))
-    gulp.watch("src/*.pug", gulp.parallel('pug-index'));
-    gulp.watch("src/pug/page/**/*.pug", gulp.parallel('pug-page'));
-    gulp.watch("src/*.html", gulp.parallel('html-index'));
-    gulp.watch("src/html/**/*.html", gulp.parallel('html-page'));
+    gulp.watch("src/pug/page/**/*.pug", gulp.series ('pug-page'));
+    gulp.watch("src/pages/**/*.html", gulp.series('html-page'));
+    gulp.watch("src/**/index.html", gulp.series('rename-index'));
     gulp.watch("src/icons/**/*", gulp.parallel('icons'));
     gulp.watch("src/img/**/*", gulp.parallel('image'));
+    gulp.watch("src/js/**/*.js", gulp.parallel('scripts'));
+    
 })
 
 
@@ -86,17 +87,20 @@ gulp.task('clean', function() {
 
 // Минимизируем файлы HTML и складываем в dist
 
-gulp.task('html-index',function() {
-    return gulp.src('src/*.html')
-      .pipe(htmlmin({ collapseWhitespace: true }))
-      .pipe(gulp.dest('dist/'));
-});
 
 gulp.task('html-page',function() {
-    return gulp.src('src/html/**/*.html')
+    return gulp.src('src/pages/**/*.html')
         .pipe(htmlmin({ collapseWhitespace: true }))
-        .pipe(gulp.dest('dist/html'));
+        .pipe(gulp.dest('dist/pages'));
 });
+
+gulp.task('rename-index',function() {
+    return gulp.src('dist/**/index.html')
+    .pipe(rename({dirname: ''}))
+    .pipe(gulp.dest('dist'));
+});
+
+
 
 // Копируем данные в dist
 
@@ -135,6 +139,6 @@ gulp.task('image',function() {
 
 //Запускаем задачу на отслеживание
 
-gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'pug-index', 'pug-page', 'clean', 'html-index', 'html-page', 'scripts', 'fonts', 'icons', 'mailer', 'image'  ));
+gulp.task('default',  gulp.parallel('watch','styles', 'clean', gulp.series('pug-page', 'html-page', 'rename-index', 'server' ), 'scripts', 'fonts', 'icons', 'mailer', 'image', ));
 
 

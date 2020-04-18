@@ -11,29 +11,31 @@
 nav
     .container
         ul.menu
-            li.menu_list
-                a.menu_link(href=htmlpatch+"index.html") Главная
-            li.menu_list
-                a.menu_link(href="/html/html.html")   WEb разработка
-                ul.dropdown
-                    li.menu_list 
-                        a(href="#") HTML
-                    li
+            li.menu__list
+                a.menu__link(href=htmlpatch+"index.html") Главная
+                ul.menu__drop
+                    li.menu__drop__list 1
+                    li.menu__drop__list 2
+            li.menu__list
+                a.menu__link(href="#")   WEb разработка
+                ul.menu__drop
+                    li.menu__drop__list
+                        a(href=htmlpatch+"html.html") HTML
+                    li.menu__drop__list
                         a(href="#") Git
-            li.menu_list
-                a.menu_link(href="/html/html.html")  Администрирование
-                ul.dropdown
-                    li.menu_list
-                        a(href="/html/docker.html") Docker
-            li.menu_list
+            li.menu__list
+                a.menu__link(href="/html/html.html")  Администрирование
+                ul.menu_drop
+                    //- li.menu-drop__list
+                    //-     a(href="/html/docker.html") Docker
+                    //- li.menu-
+            li.menu__list
                 a.menu_link(href= "http://file.f2service.ru")  Скачать ПО
-            li.menu_list
+            li.menu__list
                 a.menu_link(href="/html/contact.html")  Контакты
-            li.menu_list
+            li.menu__list
                 a.menu_link(href="/html/docker.html") Docker
-    .hamburger
-        span dfdff
-        span dfsdfd
-        span
-
+        
+        
+    
             

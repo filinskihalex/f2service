@@ -1,0 +1,35 @@
+nav
+    height: 50px
+    background-color: $main_color
+    border-radius: 5px
+    ul
+        list-style-type: none
+    .menu
+        display: flex
+        justify-content: space-around
+        padding: 0px 70px
+        margin: 0
+        line-height: 50px;
+        &__link
+            color: #ffffff
+            font-size: 15px
+            font-weight: 300
+            text-decoration: none
+        &__list
+            position: relative
+            &:hover 
+                .menu__drop 
+                     display: inherit
+        &__drop
+            position: absolute
+            top: 100%
+            background-color: $main_color
+            display: none
+            line-height: 20px
+            text-align: center
+            width: 100%
+     
+                
+            
+            
+    

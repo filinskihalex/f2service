@@ -328,6 +328,55 @@ template {
   font-weight: 400;
   font-style: normal; }
 
+/* Mobile first layout SmartMenus Core CSS (it's not recommended editing these rules)
+   You need this once per page no matter how many menu trees or different themes you use.
+-------------------------------------------------------------------------------------------*/
+.sm {
+  box-sizing: border-box;
+  position: relative;
+  z-index: 9999;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+.sm, .sm ul, .sm li {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  direction: ltr;
+  text-align: left; }
+
+.sm-rtl, .sm-rtl ul, .sm-rtl li {
+  direction: rtl;
+  text-align: right; }
+
+.sm > li > h1, .sm > li > h2, .sm > li > h3, .sm > li > h4, .sm > li > h5, .sm > li > h6 {
+  margin: 0;
+  padding: 0; }
+
+.sm ul {
+  display: none; }
+
+.sm li, .sm a {
+  position: relative; }
+
+.sm a {
+  display: block; }
+
+.sm a.disabled {
+  cursor: default; }
+
+.sm::after {
+  content: "";
+  display: block;
+  height: 0;
+  font: 0px/0 serif;
+  clear: both;
+  overflow: hidden; }
+
+.sm *, .sm *::before, .sm *::after {
+  box-sizing: inherit; }
+
 * {
   font-family: 'Roboto', sans-seif;
   box-sizing: border-box;
@@ -391,27 +440,6 @@ header {
   position: relative; }
   header .hamburger {
     display: none; }
-  header nav {
-    height: 50px;
-    background-color: #33669A;
-    border-radius: 5px; }
-    header nav .menu {
-      display: flex;
-      justify-content: space-around;
-      padding: 13px 70px;
-      margin: 0;
-      list-style-type: none; }
-      header nav .menu_link {
-        color: #ffffff;
-        font-size: 15px;
-        font-weight: 300;
-        text-decoration: none; }
-    header nav ul .dropdown {
-      display: none;
-      position: absolute;
-      top: 100%; }
-      header nav ul .dropdown:hover {
-        display: inherit; }
   header .subheader {
     width: 100%;
     display: grid;
@@ -461,6 +489,36 @@ header {
       header .subheader_btn:hover {
         background-image: none;
         background-color: #33669A; }
+
+nav {
+  height: 50px;
+  background-color: #33669A;
+  border-radius: 5px; }
+  nav ul {
+    list-style-type: none; }
+  nav .menu {
+    display: flex;
+    justify-content: space-around;
+    padding: 0px 70px;
+    margin: 0;
+    line-height: 50px; }
+    nav .menu__link {
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 300;
+      text-decoration: none; }
+    nav .menu__list {
+      position: relative; }
+      nav .menu__list:hover .menu__drop {
+        display: inherit; }
+    nav .menu__drop {
+      position: absolute;
+      top: 100%;
+      background-color: #33669A;
+      display: none;
+      line-height: 20px;
+      text-align: center;
+      width: 100%; }
 
 .html_rules {
   padding: 15px; }
