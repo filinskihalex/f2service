@@ -12,7 +12,7 @@ nav
     .container
         ul.menu
             li.menu__list
-                a.menu__link(href=htmlpatch+"index.html") Главная
+                a.menu__link(href="index.html") Главная
                 ul.menu__drop
                     li.menu__drop__list 1
                     li.menu__drop__list 2
@@ -24,17 +24,19 @@ nav
                     li.menu__drop__list
                         a(href="#") Git
             li.menu__list
-                a.menu__link(href="/html/html.html")  Администрирование
-                ul.menu_drop
-                    //- li.menu-drop__list
-                    //-     a(href="/html/docker.html") Docker
-                    //- li.menu-
+                a.menu__link(href="#")  Администрирование
+                ul.menu__drop
+                    li.menu__drop__list
+                        a(href=htmlpatch+"docker/docker.html") Docker
+                        ul.menu__drop__two
+                            li.menu__drop__list__two
+                            a(href="#") Тест
+
+                    li.menu__drop__list 2
+
             li.menu__list
                 a.menu_link(href= "http://file.f2service.ru")  Скачать ПО
-            li.menu__list
-                a.menu_link(href="/html/contact.html")  Контакты
-            li.menu__list
-                a.menu_link(href="/html/docker.html") Docker
+            
         
         
     

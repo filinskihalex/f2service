@@ -1,15 +1,16 @@
-extend ../includes/_template.pug 
+extend ../../includes/_template.pug 
 
 append config
         - var myTitle = 'Основные команды docker'
         - var myDesc = 'Docker'
         - var mykeywords = 'Основные команды docker'
-        - var csspatch = '../css/'
-        - var icopatch = '../icons/'
+        - var csspatch = '../../css/'
+        - var icopatch = '../../icons/'
         - var htmlpatch = '../'
 
 append content
     .content
+        h1 Основные команды докера
         .wrap_code
             .p Просмотр images в docker
             .code
@@ -38,7 +39,7 @@ append content
             .p Сохранение контейнера
             .code
                 | docker commit nginx web
-        
+            
 
 
         

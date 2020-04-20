@@ -13,8 +13,8 @@ module.exports = function pug2html_build(cb) {
         .pipe(plumber())
         .pipe(pugLinter({reporter: 'default'}))
         .pipe(pug())
-        .pipe(htmlValidator())
-        .pipe(bemValidator())
+        // .pipe(htmlValidator())
+        // .pipe(bemValidator())
         .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(gulp.dest('./build/pages'))
 

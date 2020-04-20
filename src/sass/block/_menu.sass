@@ -19,7 +19,9 @@ nav
             position: relative
             &:hover 
                 .menu__drop 
-                     display: inherit
+                    transition: 1s
+                    display: inherit
+           
         &__drop
             position: absolute
             top: 100%
@@ -28,7 +30,16 @@ nav
             line-height: 20px
             text-align: center
             width: 100%
-     
+            border-bottom-left-radius: 5px
+            border-bottom-right-radius: 5px
+            
+            &__list
+                &__two
+                    position: absolute
+                &:hover 
+                .menu__drop__list__two 
+                    transition: 1s
+                    display: inherit
                 
             
             

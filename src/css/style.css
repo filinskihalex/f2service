@@ -510,6 +510,7 @@ nav {
     nav .menu__list {
       position: relative; }
       nav .menu__list:hover .menu__drop {
+        transition: 1s;
         display: inherit; }
     nav .menu__drop {
       position: absolute;
@@ -518,7 +519,14 @@ nav {
       display: none;
       line-height: 20px;
       text-align: center;
-      width: 100%; }
+      width: 100%;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px; }
+      nav .menu__drop__list__two {
+        position: absolute; }
+      nav .menu__drop__list .menu__drop__list__two {
+        transition: 1s;
+        display: inherit; }
 
 .html_rules {
   padding: 15px; }
