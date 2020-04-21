@@ -3,7 +3,8 @@
     box-sizing: border-box
     margin: 0
     padding: 0
-
+body
+    background: url(./../img/body.jpg) center  no-repeat
 .content
     padding: 10px 20px
     border: 1px solid $main_color
@@ -15,6 +16,7 @@ main.grid
         grid: auto 2fr auto / 1fr 3fr 1fr
         width: 1140px
         margin: 0 auto
+        min-height: 100vh
     
 section
     grid-column: span 2

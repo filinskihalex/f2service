@@ -328,60 +328,14 @@ template {
   font-weight: 400;
   font-style: normal; }
 
-/* Mobile first layout SmartMenus Core CSS (it's not recommended editing these rules)
-   You need this once per page no matter how many menu trees or different themes you use.
--------------------------------------------------------------------------------------------*/
-.sm {
-  box-sizing: border-box;
-  position: relative;
-  z-index: 9999;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
-
-.sm, .sm ul, .sm li {
-  display: block;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  line-height: normal;
-  direction: ltr;
-  text-align: left; }
-
-.sm-rtl, .sm-rtl ul, .sm-rtl li {
-  direction: rtl;
-  text-align: right; }
-
-.sm > li > h1, .sm > li > h2, .sm > li > h3, .sm > li > h4, .sm > li > h5, .sm > li > h6 {
-  margin: 0;
-  padding: 0; }
-
-.sm ul {
-  display: none; }
-
-.sm li, .sm a {
-  position: relative; }
-
-.sm a {
-  display: block; }
-
-.sm a.disabled {
-  cursor: default; }
-
-.sm::after {
-  content: "";
-  display: block;
-  height: 0;
-  font: 0px/0 serif;
-  clear: both;
-  overflow: hidden; }
-
-.sm *, .sm *::before, .sm *::after {
-  box-sizing: inherit; }
-
 * {
   font-family: 'Roboto', sans-seif;
   box-sizing: border-box;
   margin: 0;
   padding: 0; }
+
+body {
+  background: url(./../img/body.jpg) center no-repeat; }
 
 .content {
   padding: 10px 20px;
@@ -393,7 +347,8 @@ main.grid {
   grid-gap: 1em;
   grid: auto 2fr auto / 1fr 3fr 1fr;
   width: 1140px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  min-height: 100vh; }
 
 section {
   grid-column: span 2; }
@@ -538,7 +493,6 @@ footer {
   background-color: #F8F8FF;
   grid-column: span 3; }
   footer nav .menu {
-    margin-top: 5px;
     display: flex;
     justify-content: space-between;
     list-style: none; }
@@ -550,6 +504,44 @@ footer {
   footer .copyraiting {
     text-align: center; }
 
-@media (max-width: 767px) {
-  header .hamburger {
-    display: block; } }
+/*==========  Desktop First  ==========*/
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+  /**/ }
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+  /**/ }
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  /**/ }
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  /**/ }
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+  /**/ }
+
+/*==========  Mobile First  ==========*/
+/* Custom, iPhone Retina */
+@media only screen and (min-width: 320px) {
+  /**/ }
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+  /**/ }
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+  /**/ }
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+  /**/ }
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
+  /**/ }

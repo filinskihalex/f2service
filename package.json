@@ -30,6 +30,7 @@
     "gulp-sftp": "^0.1.5",
     "gulp-sftp-up4": "^0.1.8",
     "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
     "gulp-w3c-html-validator": "^2.0.0"
   },
   "dependencies": {

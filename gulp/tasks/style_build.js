@@ -11,11 +11,11 @@ const shorthand = require('gulp-shorthand');
 
 module.exports = function style_build(cb) {
     return gulp.src('./src/sass/**/*.+(scss|sass)')
+        .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: "compressed"}).on('error', notify.onError()))
         .pipe(rename({suffix: '.min', prefix: ''}))
         .pipe(autoprefixer())
-        .pipe(sourcemaps.init())
-        .pipe(shorthand())
+        // .pipe(shorthand())
         .pipe(cleanCSS({compatibility: '*' , 
             level: { 1: { specialComments: false } } 
             }
