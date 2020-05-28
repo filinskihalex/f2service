@@ -1,0 +1,15 @@
+extend ../../includes/_template.pug 
+
+append config
+        - var myTitle = 'Основные команды docker'
+        - var myDesc = 'Docker'
+        - var mykeywords = 'Основные команды docker'
+
+
+append content
+    .content
+        ul
+            li
+                a(href=htmlpatch+"docker/docker.html") Основные команды 
+            li
+                a(href=htmlpatch+"docker/Docker_Reload_Nginx.html") Перезагрузка службы внутри контейнера

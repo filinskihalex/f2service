@@ -4,11 +4,13 @@ const pug = require('gulp-pug')
 const pugLinter = require('gulp-pug-linter')
 const htmlValidator = require('gulp-w3c-html-validator')
 const bemValidator = require('gulp-html-bem-validator')
+const cache = require('gulp-cached');
 
 
 
 module.exports = function pug2html(cb) {
     return gulp.src('./src/pug/page/**/*.pug')
+        .pipe(cache('pug'))
         .pipe(plumber())
         .pipe(pugLinter({reporter: 'default'}))
         .pipe(pug({pretty: true}))
