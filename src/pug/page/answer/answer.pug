@@ -1,0 +1,14 @@
+extend ../../includes/_template.pug 
+
+append config
+        - var myTitle = 'Вопросы & Ответы'
+        - var myDesc = 'Вопросы & Ответы'
+        - var mykeywords = 'Частые вопросы и ответы'
+
+
+append content
+    .content
+        ul.question__list
+            li.question__list_answer
+                a(href=htmlpatch+"answer/tarGZ.html") Распаковка архива tar в linux
+            

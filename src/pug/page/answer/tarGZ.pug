@@ -1,0 +1,17 @@
+extend ../../includes/_template.pug 
+
+append config
+        - var myTitle = 'Как распаковать tar.gz архив в Linux?'
+        - var myDesc = 'Как распаковать tar.gz архив в Linux?'
+        - var mykeywords = 'Как распаковать tar.gz архив в Linux?'
+
+
+append content
+    .content
+        .acticle
+            .question
+                | Как распаковать tar.gz архив в Linux?
+            .answer
+                | Чтобы распаковать tar.gz архив в текущую директорию нужно выполнить команду:
+                .code
+                    |  tar xvzf archive.tar.gz

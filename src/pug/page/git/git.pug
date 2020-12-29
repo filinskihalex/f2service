@@ -1,0 +1,18 @@
+extend ../../includes/_template.pug 
+
+append config
+        - var myTitle = 'Git Заметки'
+        - var myDesc = 'ЗАметки по Работе с Git'
+        - var mykeywords = 'Git gulp'
+        - var csspatch = '../../css/'
+        - var icopatch = '../../icons/'
+        - var image = '../../img/git/new_project/'
+        - var htmlpatch = '../'
+
+append content
+        .content
+                p
+                        a(href=htmlpatch+"git/git_ssh_key.html") Подключени к GIt через ssh ключь
+                p
+                        a(href=htmlpatch+"git/git_work.html") Работа  Git в windows
+                

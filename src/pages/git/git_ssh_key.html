@@ -2,18 +2,18 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8"/>
-    <title>Вопросы ответы</title>
+    <title>Git hub key</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Docker"/>
-    <meta name="keywords" content="Основные команды docker"/>
-    <link rel="stylesheet" href="../css/style.min.css"/>
-    <link href="../icons/favicon.ico" type="image/x-icon" rel="icon"/>
+    <meta name="description" content="Авторизация в Git по ключу"/>
+    <meta name="keywords" content="Git gulp"/>
+    <link rel="stylesheet" href="../../css/style.min.css"/>
+    <link href="../../icons/favicon.ico" type="image/x-icon" rel="icon"/>
   </head>
   <body>
     <main class="grid">
       <header>
         <div class="subheader">
-          <div class="wrapper"><a class="subheader_logo" href="http://f2service.ru"><img src="../icons/logo.png" alt="logo"/></a>
+          <div class="wrapper"><a class="subheader_logo" href="http://f2service.ru"><img src="../../icons/logo.png" alt="logo"/></a>
             <div class="subheader_official">Услуги Системного администрирования</div>
           </div>
           <div class="subheader_call">Звоните нам ежедневно<a class="subheader_phone" href="tel:+1111111">+7 978-1111111</a></div>
@@ -44,12 +44,13 @@
       </header>
       <section>
         <div class="content">
-          <div class="acticle">
-            <div class="question">denied: requested access to the resource is denied</div>
-            <div class="answer">Необходимо произвести регистрацию на DockerHub
-              <div class="code"> docker login</div>
-            </div>
-          </div>
+          <h2>Генерируем ключ в программе Pytty-keygen</h2>
+          <p>Запускаем программу нажимаем генерировать</p><img src="../../img/git/git_ssh_key/1.png" alt=""/>
+          <p>В поле комментарий указываем название ключа ( для себя что бы не забыть от чего ключ)</p>
+          <p>парольная фраза указываем пароль на ключ (рекомендуеться) Необходимо будет вводить пароль при каждом подключении. Если не указывать подключаться будет автоматически.</p>
+          <p>Нажимаем  Открытый ключ и сохраняем в папку C:\Users\Пользователь\.ssh под именем id_rsa.pub</p>
+          <p>Нажимаем Конвертация выбираем Экспортировать ключ в формате OpenSHH новый формате указываем имя id_rsa ( это закрытый ключ)</p>
+          <p>Копируем ключ из поля 1 и вставляем его в личном кабинете Github</p>
         </div>
       </section>
       <sidebar></sidebar>

@@ -504,6 +504,15 @@ footer {
   footer .copyraiting {
     text-align: center; }
 
+.code-view {
+  display: block;
+  background: #f3f3f3;
+  font-size: 16px;
+  padding: 20px 28px;
+  margin: 24px 0 36px;
+  overflow-wrap: break-word;
+  white-space: pre; }
+
 /*==========  Desktop First  ==========*/
 /* Large Devices, Wide Screens */
 @media only screen and (max-width: 1200px) {

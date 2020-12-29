@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Защита SSH-соединений с помощью fail2ban на Ubuntu 18.04</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="fail2ban-SSH"/>
+    <meta name="keywords" content="Защита SSH-соединений с помощью fail2ban на Ubuntu 18.04"/>
+    <link rel="stylesheet" href="../../css/style.min.css"/>
+    <link href="../../icons/favicon.ico" type="image/x-icon" rel="icon"/>
+  </head>
+  <body>
+    <main class="grid">
+      <header>
+        <div class="subheader">
+          <div class="wrapper"><a class="subheader_logo" href="http://f2service.ru"><img src="../../icons/logo.png" alt="logo"/></a>
+            <div class="subheader_official">Услуги Системного администрирования</div>
+          </div>
+          <div class="subheader_call">Звоните нам ежедневно<a class="subheader_phone" href="tel:+1111111">+7 978-1111111</a></div>
+          <button class="subheader_btn">Отправить заявку</button>
+        </div>
+        <nav>
+          <div class="container">
+            <ul class="menu">
+              <li class="menu__list"><a class="menu__link" href="../../index.html">Главная</a></li>
+              <li class="menu__list"><a class="menu__link" href="#">  WEb разработка</a>
+                <ul class="menu__drop">
+                  <li class="menu__drop__list"><a href="../../pages/html/html.html">HTML</a></li>
+                  <li class="menu__drop__list"><a href="../../pages/git/git.html">Git</a></li>
+                  <li class="menu__drop__list"><a href="../../pages/git/git_ssh_key.html">Git-ssh-key</a></li>
+                </ul>
+              </li>
+              <li class="menu__list"><a class="menu__link" href="#"> Администрирование</a>
+                <ul class="menu__drop">
+                  <li class="menu__drop__list"><a href="../../pages/docker/docker_index.html">Docker</a></li>
+                  <li class="menu__drop__list"> <a href="../../pages/linux/fail2ban_ssh.html">fail2ban</a></li>
+                </ul>
+              </li>
+              <li class="menu__list"><a class="menu_link" href="../../pages/answer/answer.html">Вопросы & Ответы</a></li>
+              <li class="menu__list"><a class="menu_link" href="http://file.f2service.ru"> Скачать ПО</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <section>
+        <div class="content">
+          <h1>Защита SSH-соединений с помощью fail2ban на Ubuntu 18.04</h1>
+          <p>Сегодня рассмотрим защиту SSH-сервиса от атак  Brute Force с помощью программы Fail2Ban, которая эффективно отслеживает сетевую активность и блокирует запросы с устройств, IP-адрес которых попал в чёрный список.</p>
+          <h2>Подготовка системы и обновление</h2>Устанавливать Fail2Ban будем на операционную систему Ubuntu Server 18.04.
+          Перед установкой программы сперва выполним обновление системы:
+          <div class="code-view">sudo apt update
+            <p>sudo apt dist-upgrade -y</p>
+          </div>
+          <h2>Установка  fail2ban из репозитория ubuntu</h2>
+          <div class="code-view">sudo apt install fail2ban -y</div>
+          <h2>Настройка Fail2Ban для SSH</h2>
+          <p>Все правки конфигурации мы будем производить в файле /etc/fail2ban/jail.local, этот файл будет подключен автоматически и его настройки имеют наивысший приоритет.</p>
+          <p>Откройте файл /etc/fail2ban/jail.local:</p>
+          <div class="code-view">sudo nano /etc/fail2ban/jail.local</div>
+          <p>Если файл отсутствует, то сначала создадим его:</p>
+          <div class="code-view">sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local</div>
+          <p>В первую очередь нас интересует секция [DEFAULT]. В ней содержатся основные правила:</p><br/>
+          <ul>
+            <li>ignoreip - указание, какие IP-адреса не должны блокироваться. Вы можете задать через пробел несколько адресов, которые fail2ban не будет учитывать в своих проверках. Например, если у вас постоянный IP-адрес, то вы можете указать его, и тогда при ошибочном вводе пароля ваш IP не будет заблокирован.</li>
+            <li>bantime — время в секундах, в течение которого подозрительный IP-адрес будет заблокирован.</li>
+            <li>findtime — интервал времени в секундах, в течение которого программой будет определяться подозрительная активность.</li>
+            <li>maxretry — число неудавшихся попыток авторизации в течение findtime секунд до попадания IP-адреса в бан</li>
+          </ul>
+        </div>
+      </section>
+      <sidebar></sidebar>
+      <footer>
+        <div class="container">
+          <div class="copyraiting"> Copyright © 2020 <a href="www.f2service.ru" target="_blank">www.f2service.ru</a></div>
+          <div class="social"></div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

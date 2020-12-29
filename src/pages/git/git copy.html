@@ -2,18 +2,18 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8"/>
-    <title>Вопросы ответы</title>
+    <title>Git Заметки</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Docker"/>
-    <meta name="keywords" content="Основные команды docker"/>
-    <link rel="stylesheet" href="../css/style.min.css"/>
-    <link href="../icons/favicon.ico" type="image/x-icon" rel="icon"/>
+    <meta name="description" content="ЗАметки по Работе с Git"/>
+    <meta name="keywords" content="Git gulp"/>
+    <link rel="stylesheet" href="../../css/style.min.css"/>
+    <link href="../../icons/favicon.ico" type="image/x-icon" rel="icon"/>
   </head>
   <body>
     <main class="grid">
       <header>
         <div class="subheader">
-          <div class="wrapper"><a class="subheader_logo" href="http://f2service.ru"><img src="../icons/logo.png" alt="logo"/></a>
+          <div class="wrapper"><a class="subheader_logo" href="http://f2service.ru"><img src="../../icons/logo.png" alt="logo"/></a>
             <div class="subheader_official">Услуги Системного администрирования</div>
           </div>
           <div class="subheader_call">Звоните нам ежедневно<a class="subheader_phone" href="tel:+1111111">+7 978-1111111</a></div>
@@ -43,13 +43,22 @@
         </nav>
       </header>
       <section>
-        <div class="content">
-          <div class="acticle">
-            <div class="question">denied: requested access to the resource is denied</div>
-            <div class="answer">Необходимо произвести регистрацию на DockerHub
-              <div class="code"> docker login</div>
-            </div>
-          </div>
+        <div class="content"><a href="../git/git_ssh_key.html">Подключени к GIt через ssh ключь</a>
+          <h2>Создаем репозиторий на проект</h2>
+          <p>Создаем паку под проект</p><img src="../../img/git/new_project/folder.png" alt="folder"/>
+          <p>Переходим в папку нажимае правой кнопкой и открываем окно терминала Git Bush</p><img src="../../img/git/new_project/menu.png" alt="menu"/>
+          <p>Вводим комнду git init</p><img src="../../img/git/new_project/init.png" alt="init"/>
+          <p>Создаем тестовый файл и запускаем команду git status</p><img src="../../img/git/new_project/status.png" alt="status"/>
+          <p>Добавляем файлы в контрольную точку Git add -A</p>
+          <p>Просматриваем что файлы добавились в проект Git status</p><img src="../../img/git/new_project/add.png" alt="add"/>
+          <p>Создаем контрольную точку Git commit -a -m"new"</p><img src="../../img/git/new_project/commit.png" alt="commit"/>
+          <p>Есть два варианта создания репозитория
+            <ul>
+              <li>С помошью командной консоли</li>
+              <li>На самом сайте https://github.com</li>
+            </ul>
+          </p>
+          <p>Заходим на сайт https://github.com  Логинимся и создаем новый репозиторий</p><img src="../../img/git/new_project/new_repository.png" alt="repository"/>
         </div>
       </section>
       <sidebar></sidebar>
