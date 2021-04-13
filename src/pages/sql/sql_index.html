@@ -2,10 +2,10 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8"/>
-    <title>Git Заметки</title>
+    <title>не получается создать бд в PostgreSQL</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="ЗАметки по Работе с Git"/>
-    <meta name="keywords" content="Git gulp"/>
+    <meta name="description" content=" ОШИБКА: исходная база &quot;template1&quot;"/>
+    <meta name="keywords" content=" ОШИБКА: исходная база &quot;template1&quot;"/>
     <link rel="stylesheet" href="../../css/style.min.css"/>
     <link href="../../icons/favicon.ico" type="image/x-icon" rel="icon"/>
   </head>
@@ -43,8 +43,18 @@
       </header>
       <section>
         <div class="content">
-          <p><a href="../git/git_ssh_key.html">Подключени к GIt через ssh ключь</a></p>
-          <p><a href="../git/git_work.html">Работа  Git в windows</a></p>
+          <p>ОШИБКА: исходная база "template1" занята другими пользователями DETAIL: Эта база данных используется ещё в 1 сеансе.</p>
+          <p>Проблема простая и причина ошибки сразу указана в тексте ошибки:</p>
+          <p>Эта база данных используется ещё в 1 сеансе.</p>
+          <p>Посмотреть какие это сессии можно запросом:</p>
+          <p>select * from pg_stat_activity where datname = 'template1';</p>
+          <p>Принудительно их завершить запросом:</p>
+          <p>select pg_terminate_backend(pid) from pg_stat_activity where datname = 'template1';</p>
+          <p>После завершения всех сессий к этой базе create database успешно выполнится.</p>
+          <p>Непонятна здесь может деталь, при чём тут какой-то template1 когда вы командуете, допустим,</p>
+          <p>create database newdb;</p>
+          <p>Где тут template1 и как для создания новой пустой БД мешают сессии в template1?</p>
+          <p>Фокус здесь в том, что вообще-то create database не умеет создавать новые базы с нуля из ничего. Это умеет только initdb при инициализации всего экземпляра postgresql. А create database умеет только создавать копию базы указанную параметром template со значением по-умолчанию как раз template1. При этом, чтобы не получить несогласованное состояние файлов базы из-за параллельного изменения этой базы кем-то ещё create database требует, чтобы никто к этой template базе не был подключен вообще.</p><a href="../sql/sql_select.html">Простые запросы с Select</a>
         </div>
       </section>
       <sidebar></sidebar>

@@ -1,0 +1,19 @@
+extend ../../includes/_template.pug 
+
+append config
+        - var myTitle = 'Записки администратора Linux'
+        - var myDesc = 'ЗАметки по работе с система'
+        - var mykeywords = 'Администрирование Linux'
+        - var csspatch = '../../css/'
+        - var icopatch = '../../icons/'
+        //- - var image = '../../img/git/new_project/'
+        - var htmlpatch = '../'
+
+append content
+        .content
+                p
+                        a(href=htmlpatch+"linux/ssh_ubuntu16.html") SSH ubuntu 16
+                p
+                        a(href=htmlpatch+"linux/fail2ban_ssh.html") fail2ban
+                
+                

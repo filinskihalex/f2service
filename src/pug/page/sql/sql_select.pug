@@ -1,0 +1,119 @@
+extend ../../includes/_template.pug 
+
+append config
+        - var myTitle = 'Простые запросы Select'
+        - var myDesc = ' Простые запросы Select'
+        - var mykeywords = ' Простые запросы Select'
+        - var csspatch = '../../css/'
+        - var icopatch = '../../icons/'
+        //- - var image = '../../img/git/new_project/'
+        - var htmlpatch = '../'
+
+append content
+        .content
+                h1 Простые запросы Select
+                UL Операторы
+                        li SELECT - выбираем из каких столбцов будете осуществяляться выборка данных (* из всех стаблиц)
+                        li FROM  -  из какой таблицы будут выбираться данные
+                        li DISTINCT - Вывод уникальных строк (Всегда ставиться перед столбцом , дубликаты строк не будут показны)
+                        li COUNT(*) - Подсчет строк в столбце
+                        li WHERE - фильтрация по условию
+                        li Если название строки есть ковычки 'US'A' , то экранируем добавление еще одной ковычки 'US''A'
+                        li AND - Кобинация двух условий ( выводит данные если все условия в true)
+                        li OR - Или ( выводит данные если хотябы одно условие true)
+                        li BETWEEN - Интервал включающий верхнию и нижнею границу (Улучшенный вариан AND)
+                        li IN & NOT IN (Улучшенный вариан OR)
+                        li ORDER BY - Сортировка столбца по убыванию или возрастанирю (используться после WHERE) (ASC - по возрастанию , DESC - по убыванию)
+                h2 Полная выборка
+                .wrap_code
+                        .p Выборка всех данных из таблицы product и вывод в консоль
+                        .code
+                                | SELECT *
+                                br
+                                | FROM products
+                h2 Арифметические операции
+                .wrap_code
+                        .p Перемножаем данные одной колонки на другую
+                        .code
+                                | SELECT product_id, product_name, unit_price* units_in_stock
+                                br
+                                | FROM products
+                h2 DISTINCT
+                .wrap_code
+                        .p Вывод уникальных строк в столбце city
+                        .code
+                                | SELECT DISTINCT city
+                                br
+                                | FROM employees
+                h2 COUNT
+                .wrap_code
+                        .p Вывод Колличества уникальных строк в столбце country
+                        .code
+                                | SELECT COUNT(DISTINCT country)
+                                br
+                                | FROM employees
+                h2 COUNT
+                .wrap_code
+                        .p Вывод Колличества уникальных строк в столбце country
+                        .code
+                                | SELECT COUNT(DISTINCT country)
+                                br
+                                | FROM employees
+                h2 WHERE
+                .wrap_code
+                        .p Поиск с условием вывод всех данных по Countru с условием USA 
+                        .code
+                                | SELECT company_name, contact_name, phone
+                                br
+                                | FROM customers
+                                br
+                                | WHERE country = 'USA'
+                h2 AND
+                .wrap_code
+                        .p Вывод данных по условию units_in_stock > 40 and unit_price >25 (Выводит данные  если оба условия в true)
+                        .code
+                                | SELECT *
+                                br
+                                | FROM products
+                                br
+                                | WHERE units_in_stock > 40 and unit_price >25
+                h2 OR
+                .wrap_code
+                        .p Совмещение условий AND и OR  
+                        .code
+                                | SELECT *
+                                br
+                                | FROM orders
+                                br
+                                | WHERE shipped_date > '1998-04-30' AND (freight  75 OR freight > 150)
+                h2 BETWEEN
+                .wrap_code
+                        .p  Улучшенная команда  AND вывода диапазона со включением 20 и 40
+                        .code
+                                | SELECT *
+                                br
+                                | FROM orders
+                                br
+                                | WHERE freight BETWEEN 20 AND 40
+                h2 IN & NOT IN
+                .wrap_code
+                        .p  Улучшенная команда  OR 
+                        .code
+                                | SELECT *
+                                br
+                                | FROM customers
+                                br
+                                | WHERE country IN ('Mexico','Canada', 'USA')
+                h2 ORDER BY 
+                .wrap_code
+                        .p  Сортировка стран и городов по возрастанию
+                        .code
+                                | SELECT DISTINCT country, city
+                                br
+                                | FROM customers
+                                br
+                                | ORDER BY country, city
+
+
+
+        

@@ -2,18 +2,20 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8"/>
-    <title>Вопросы ответы</title>
+    <title>Записки администратора</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Docker"/>
-    <meta name="keywords" content="Основные команды docker"/>
-    <link rel="stylesheet" href="../css/style.min.css"/>
-    <link href="../icons/favicon.ico" type="image/x-icon" rel="icon"/>
+    <meta name="description" content="ЗАметки по работе с система"/>
+    <meta name="keywords" content="Администрирование"/>
+    <link rel="stylesheet" href="../../css/style.min.css"/>
+    <link href="../../icons/favicon.ico" type="image/x-icon" rel="icon"/>
   </head>
   <body>
     <main class="grid">
       <header>
         <div class="subheader">
-          <div class="wrapper"><a class="subheader_logo" href="http://f2service.ru"><img src="../icons/logo.png" alt="logo"/></a></div>
+          <div class="wrapper"><a class="subheader_logo" href="http://f2service.ru"><img src="../../icons/logo.png" alt="logo"/></a>
+            <div class="subheader_official">Услуги Системного администрирования</div>
+          </div>
           <div class="subheader_call">Звоните нам ежедневно<a class="subheader_phone" href="tel:+1111111">+7 978-1111111</a></div>
           <button class="subheader_btn">Отправить заявку</button>
         </div>
@@ -24,6 +26,7 @@
               <li class="menu__list"><a class="menu__link" href="#">  WEb разработка</a>
                 <ul class="menu__drop">
                   <li class="menu__drop__list"><a href="../html/html.html">HTML</a></li>
+                  <li class="menu__drop__list"><a href="../git/git.html">Git</a></li>
                 </ul>
               </li>
               <li class="menu__list"><a class="menu__link" href="../system/system.html"> Администрирование</a>
@@ -31,8 +34,7 @@
                   <li class="menu__drop__list"><a href="../windows/windows.html">Windows</a></li>
                   <li class="menu__drop__list"><a href="../linux/linux.html">Linux</a></li>
                   <li class="menu__drop__list"><a href="../docker/docker_index.html">Docker</a></li>
-                  <li class="menu__drop__list"><a href="../git/git.html">Git</a></li>
-                  <li class="menu__drop__list"> <a href="../sql/sql_index.html">SQL</a></li>
+                  <li class="menu__drop__list"> <a href="../linux/fail2ban_ssh.html">fail2ban</a></li>
                 </ul>
               </li>
               <li class="menu__list"><a class="menu_link" href="../answer/answer.html">Вопросы & Ответы</a></li>
@@ -43,12 +45,7 @@
       </header>
       <section>
         <div class="content">
-          <div class="acticle">
-            <div class="question">denied: requested access to the resource is denied</div>
-            <div class="answer">Необходимо произвести регистрацию на DockerHub
-              <div class="code"> docker login</div>
-            </div>
-          </div>
+          <p><a href="../system/ssh_ubuntu16.html">SSH ubuntu 16</a></p>
         </div>
       </section>
       <sidebar></sidebar>

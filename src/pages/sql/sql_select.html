@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Простые запросы Select</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=" Простые запросы Select"/>
+    <meta name="keywords" content=" Простые запросы Select"/>
+    <link rel="stylesheet" href="../../css/style.min.css"/>
+    <link href="../../icons/favicon.ico" type="image/x-icon" rel="icon"/>
+  </head>
+  <body>
+    <main class="grid">
+      <header>
+        <div class="subheader">
+          <div class="wrapper"><a class="subheader_logo" href="http://f2service.ru"><img src="../../icons/logo.png" alt="logo"/></a></div>
+          <div class="subheader_call">Звоните нам ежедневно<a class="subheader_phone" href="tel:+1111111">+7 978-1111111</a></div>
+          <button class="subheader_btn">Отправить заявку</button>
+        </div>
+        <nav>
+          <div class="container">
+            <ul class="menu">
+              <li class="menu__list"><a class="menu__link" href="../../index.html">Главная</a></li>
+              <li class="menu__list"><a class="menu__link" href="#">  WEb разработка</a>
+                <ul class="menu__drop">
+                  <li class="menu__drop__list"><a href="../html/html.html">HTML</a></li>
+                </ul>
+              </li>
+              <li class="menu__list"><a class="menu__link" href="../system/system.html"> Администрирование</a>
+                <ul class="menu__drop">
+                  <li class="menu__drop__list"><a href="../windows/windows.html">Windows</a></li>
+                  <li class="menu__drop__list"><a href="../linux/linux.html">Linux</a></li>
+                  <li class="menu__drop__list"><a href="../docker/docker_index.html">Docker</a></li>
+                  <li class="menu__drop__list"><a href="../git/git.html">Git</a></li>
+                  <li class="menu__drop__list"> <a href="../sql/sql_index.html">SQL</a></li>
+                </ul>
+              </li>
+              <li class="menu__list"><a class="menu_link" href="../answer/answer.html">Вопросы & Ответы</a></li>
+              <li class="menu__list"><a class="menu_link" href="http://file.f2service.ru"> Скачать ПО</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <section>
+        <div class="content">
+          <h1>Простые запросы Select</h1>
+          <UL>Операторы
+            <li>SELECT - выбираем из каких столбцов будете осуществяляться выборка данных (* из всех стаблиц)</li>
+            <li>FROM  -  из какой таблицы будут выбираться данные</li>
+            <li>DISTINCT - Вывод уникальных строк (Всегда ставиться перед столбцом , дубликаты строк не будут показны)</li>
+            <li>COUNT(*) - Подсчет строк в столбце</li>
+            <li>WHERE - фильтрация по условию</li>
+            <li>Если название строки есть ковычки 'US'A' , то экранируем добавление еще одной ковычки 'US''A'</li>
+            <li>AND - Кобинация двух условий ( выводит данные если все условия в true)</li>
+            <li>OR - Или ( выводит данные если хотябы одно условие true)</li>
+            <li>BETWEEN - Интервал включающий верхнию и нижнею границу (Улучшенный вариан AND)</li>
+            <li>IN & NOT IN (Улучшенный вариан OR)</li>
+            <li>ORDER BY - Сортировка столбца по убыванию или возрастанирю (используться после WHERE) (ASC - по возрастанию , DESC - по убыванию)</li>
+          </UL>
+          <h2>Полная выборка</h2>
+          <div class="wrap_code">
+            <div class="p">Выборка всех данных из таблицы product и вывод в консоль</div>
+            <div class="code">SELECT *<br/>FROM products</div>
+          </div>
+          <h2>Арифметические операции</h2>
+          <div class="wrap_code">
+            <div class="p">Перемножаем данные одной колонки на другую</div>
+            <div class="code">SELECT product_id, product_name, unit_price* units_in_stock<br/>FROM products</div>
+          </div>
+          <h2>DISTINCT</h2>
+          <div class="wrap_code">
+            <div class="p">Вывод уникальных строк в столбце city</div>
+            <div class="code">SELECT DISTINCT city<br/>FROM employees</div>
+          </div>
+          <h2>COUNT</h2>
+          <div class="wrap_code">
+            <div class="p">Вывод Колличества уникальных строк в столбце country</div>
+            <div class="code">SELECT COUNT(DISTINCT country)<br/>FROM employees</div>
+          </div>
+          <h2>COUNT</h2>
+          <div class="wrap_code">
+            <div class="p">Вывод Колличества уникальных строк в столбце country</div>
+            <div class="code">SELECT COUNT(DISTINCT country)<br/>FROM employees</div>
+          </div>
+          <h2>WHERE</h2>
+          <div class="wrap_code">
+            <div class="p">Поиск с условием вывод всех данных по Countru с условием USA </div>
+            <div class="code">SELECT company_name, contact_name, phone<br/>FROM customers<br/>WHERE country = 'USA'</div>
+          </div>
+          <h2>AND</h2>
+          <div class="wrap_code">
+            <div class="p">Вывод данных по условию units_in_stock > 40 and unit_price >25 (Выводит данные  если оба условия в true)</div>
+            <div class="code">SELECT *<br/>FROM products<br/>WHERE units_in_stock > 40 and unit_price >25</div>
+          </div>
+          <h2>OR</h2>
+          <div class="wrap_code">
+            <div class="p">Совмещение условий AND и OR  </div>
+            <div class="code">SELECT *<br/>FROM orders<br/>WHERE shipped_date > '1998-04-30' AND (freight  75 OR freight > 150)</div>
+          </div>
+          <h2>BETWEEN</h2>
+          <div class="wrap_code">
+            <div class="p"> Улучшенная команда  AND вывода диапазона со включением 20 и 40</div>
+            <div class="code">SELECT *<br/>FROM orders<br/>WHERE freight BETWEEN 20 AND 40</div>
+          </div>
+          <h2>IN & NOT IN</h2>
+          <div class="wrap_code">
+            <div class="p"> Улучшенная команда  OR </div>
+            <div class="code">SELECT *<br/>FROM customers<br/>WHERE country IN ('Mexico','Canada', 'USA')</div>
+          </div>
+          <h2>ORDER BY </h2>
+          <div class="wrap_code">
+            <div class="p"> Сортировка стран и городов по возрастанию</div>
+            <div class="code">SELECT DISTINCT country, city<br/>FROM customers<br/>ORDER BY country, city</div>
+          </div>
+        </div>
+      </section>
+      <sidebar></sidebar>
+      <footer>
+        <div class="container">
+          <div class="copyraiting"> Copyright © 2020 <a href="www.f2service.ru" target="_blank">www.f2service.ru</a></div>
+          <div class="social"></div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

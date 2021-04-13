@@ -1,0 +1,29 @@
+extend ../../includes/_template.pug 
+
+append config
+        - var myTitle = 'SSH Ubuntu 16'
+        - var myDesc = 'Настройка доступа по SSH'
+        - var mykeywords = 'SSH доступ'
+        - var csspatch = '../../css/'
+        - var icopatch = '../../icons/'
+        //- - var image = '../../img/git/new_project/'
+        - var htmlpatch = '../'
+
+append content
+        .content
+                p Для доступа к серверу по SSH через ключь. Необходимо На сервере создать папку и поместить в нее ключь
+                p 
+                        a(href=htmlpatch+"git/git_ssh_key.html") Как создать ключ
+                .wrap_code
+                        .p mkdir ~/.ssh
+                        .p cd ~/.ssh
+                        .p cp /root/id_rsa ./
+                        .p cp /root/id_rsa.pub ./
+                        .p nano authorized_keys
+                
+                p В authorized_keys Добавляем наш ключ копируем из поля 1
+
+                
+                        
+
+                

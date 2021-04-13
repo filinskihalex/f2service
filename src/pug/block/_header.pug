@@ -2,7 +2,7 @@
     .wrapper
         a.subheader_logo(href="http://f2service.ru")
             img(src=icopatch+"logo.png", alt="logo")
-        .subheader_official Услуги Системного администрирования
+        //- .subheader_official Услуги Системного администрирования
     .subheader_call Звоните нам ежедневно
         a.subheader_phone(href="tel:+1111111") +7 978-1111111
     button.subheader_btn Отправить заявку
@@ -18,15 +18,20 @@ nav
                 ul.menu__drop
                     li.menu__drop__list
                         a(href=htmlpatch+"html/html.html") HTML
-                    li.menu__drop__list
-                        a(href=htmlpatch+"git/git.html") Git
+                    
             li.menu__list
-                a.menu__link(href="#")  Администрирование
+                a.menu__link(href=htmlpatch+"system/system.html")  Администрирование
                 ul.menu__drop
                     li.menu__drop__list
+                        a(href=htmlpatch+"windows/windows.html") Windows
+                    li.menu__drop__list
+                        a(href=htmlpatch+"linux/linux.html") Linux
+                    li.menu__drop__list
                         a(href=htmlpatch+"docker/docker_index.html") Docker
+                    li.menu__drop__list
+                        a(href=htmlpatch+"git/git.html") Git
                     li.menu__drop__list 
-                        a(href=htmlpatch+"linux/fail2ban_ssh.html") fail2ban
+                        a(href=htmlpatch+"sql/sql_index.html") SQL
             li.menu__list
                 a.menu_link(href=htmlpatch+"answer/answer.html") Вопросы & Ответы
             li.menu__list
