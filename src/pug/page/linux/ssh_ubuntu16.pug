@@ -11,17 +11,17 @@ append config
 
 append content
         .content
-                p Для доступа к серверу по SSH через ключь. Необходимо На сервере создать папку и поместить в нее ключь
+                p Для доступа к серверу по SSH через ключь. Необходимо На сервере создать файд  папку authorized_keys и поместить в него ключь
                 p 
                         a(href=htmlpatch+"git/git_ssh_key.html") Как создать ключ
                 .wrap_code
                         .p mkdir ~/.ssh
                         .p cd ~/.ssh
-                        .p cp /root/id_rsa ./
-                        .p cp /root/id_rsa.pub ./
                         .p nano authorized_keys
                 
                 p В authorized_keys Добавляем наш ключ копируем из поля 1
+                p Если требуеться подключения с разных устройств и у каждого свой ключ. Добавляем все ключи в файл authorized_keys
+                p Размещение файла открытого ключа в дирректории /.ssh не обязательно, главное что бы они были прописаны в фале authorized_keys.
 
                 
                         
