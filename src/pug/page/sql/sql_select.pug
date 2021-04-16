@@ -12,6 +12,7 @@ append config
 append content
         .content
                 h1 Простые запросы Select
+                p Все операторы записываться в верхнем регистре (По соглашению)
                 UL Операторы
                         li SELECT - выбираем из каких столбцов будете осуществяляться выборка данных (* из всех стаблиц)
                         li FROM  -  из какой таблицы будут выбираться данные
@@ -25,6 +26,8 @@ append content
                         li IN & NOT IN (Улучшенный вариан OR)
                         li ORDER BY - Сортировка столбца по убыванию или возрастанирю (используться после WHERE) (ASC - по возрастанию , DESC - по убыванию)
                 h2 Полная выборка
+                p Приводит к падению производительности при выборе больших обьмов данных. Желательно вместо * указываем именна столбцов по которым необходимо произвести выборку.
+                p * Считаеться плохим тоном при написании кода. Используеться при разработке.
                 .wrap_code
                         .p Выборка всех данных из таблицы product и вывод в консоль
                         .code
@@ -38,13 +41,21 @@ append content
                                 | SELECT product_id, product_name, unit_price* units_in_stock
                                 br
                                 | FROM products
+                p При выборе столбцов указывем через запяную , на последнем не ставим
+                p * арифметическая функция переумножаем
+                
                 h2 DISTINCT
                 .wrap_code
                         .p Вывод уникальных строк в столбце city
                         .code
-                                | SELECT DISTINCT city
+                                | SELECT DISTINCT city , country
                                 br
                                 | FROM employees
+
+                p Если необходимо вывести уникальные и множество столбцов указывем через запятую 
+                P DISTINCT - Всегда ставиться перед столбцом       
+
+
                 h2 COUNT
                 .wrap_code
                         .p Вывод Колличества уникальных строк в столбце country
@@ -113,7 +124,43 @@ append content
                                 | FROM customers
                                 br
                                 | ORDER BY country, city
-
-
+                h2 Like
+                .wrap_code
+                        .p  Фильтрация данных по шаблону Pattern Matching
+                        .code
+                                | SELECT first_name, last_name
+                                br
+                                | FROM employees
+                                br
+                                | WHERE first_name LIKE 'A%'
+                h2 LIMIT
+                .wrap_code
+                        .p  Вывод 10  записей
+                        .code
+                                | SELECT first_name, last_name
+                                br
+                                | FROM employees
+                                br
+                                | LIMIT 10
+                p Идет самым последним
+                h2 Check on NULL
+                .wrap_code
+                        .p  Вывод записей с NULL
+                        .code
+                                | SELECT costumer_id, ship_region 
+                                br
+                                | FROM orders
+                                br
+                                | WHERE ship_region IS NULL
+                h2 GROUP BY
+                .wrap_code
+                        .p  Вывод записей с NULL
+                        .code
+                                | SELECT costumer_id, ship_region 
+                                br
+                                | FROM orders
+                                br
+                                | WHERE ship_region IS NULL
+             
 
         

@@ -2,10 +2,10 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8"/>
-    <title>не получается создать бд в PostgreSQL</title>
+    <title>Создане базы и Таблицы</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content=" ОШИБКА: исходная база &quot;template1&quot;"/>
-    <meta name="keywords" content=" ОШИБКА: исходная база &quot;template1&quot;"/>
+    <meta name="description" content=" Создане базы и Таблицы&quot;"/>
+    <meta name="keywords" content=" Создане базы и Таблицы&quot;"/>
     <link rel="stylesheet" href="../../css/style.min.css"/>
     <link href="../../icons/favicon.ico" type="image/x-icon" rel="icon"/>
   </head>
@@ -43,18 +43,28 @@
       </header>
       <section>
         <div class="content">
-          <p>ОШИБКА: исходная база "template1" занята другими пользователями DETAIL: Эта база данных используется ещё в 1 сеансе.</p>
-          <p>Проблема простая и причина ошибки сразу указана в тексте ошибки:</p>
-          <p>Эта база данных используется ещё в 1 сеансе.</p>
-          <p>Посмотреть какие это сессии можно запросом:</p>
-          <p>select * from pg_stat_activity where datname = 'template1';</p>
-          <p>Принудительно их завершить запросом:</p>
-          <p>select pg_terminate_backend(pid) from pg_stat_activity where datname = 'template1';</p>
-          <p>После завершения всех сессий к этой базе create database успешно выполнится.</p>
-          <p>Непонятна здесь может деталь, при чём тут какой-то template1 когда вы командуете, допустим,</p>
-          <p>create database newdb;</p>
-          <p>Где тут template1 и как для создания новой пустой БД мешают сессии в template1?</p>
-          <p>Фокус здесь в том, что вообще-то create database не умеет создавать новые базы с нуля из ничего. Это умеет только initdb при инициализации всего экземпляра postgresql. А create database умеет только создавать копию базы указанную параметром template со значением по-умолчанию как раз template1. При этом, чтобы не получить несогласованное состояние файлов базы из-за параллельного изменения этой базы кем-то ещё create database требует, чтобы никто к этой template базе не был подключен вообще.</p><a href="../sql/sql_select.html">Простые запросы с Select</a>
+          <h2>Создание Базы данных</h2>
+          <div class="wrap_code">
+            <div class="p">Создает Базу данных testdb</div>
+            <div class="code">CREATE DATABASE testdb</div>
+          </div>
+          <div class="wrap_code">
+            <div class="p">Удаление Базы данных Marka</div>
+            <div class="code">DROP DATABASE testdb</div>
+          </div>
+          <div class="wrap_code">
+            <div class="p">Создание таблице в базе данных Marka</div>
+            <div class="code">CREATE TABLE Marka<br/>(marka_id int PRIMARY KEY,  name varchar(32) NOT NULL );</div>
+          </div>
+          <p>marka_id - индетификатор в таблице. обычно используеться приставка id к наименованию таблицы</p>
+          <p>int(integer) - Тип данных цифровой c целым значением</p>
+          <p>PRIMARY KEY -  Уникальный ключь . данные в этом столбце не должны повторяться.</p>
+          <p>varchar(32) - тип данных и числовой и текстовой с указанием длины.</p>
+          <p>NOT NULL -  Не должен содержать ноль.</p><a href="../sql/tipdata.html">Типы Данных SQL </a>
+          <div class="wrap_code">
+            <div class="p">Удаление Базы данных Marka</div>
+            <div class="code">DROP TABLE Marka</div>
+          </div>
         </div>
       </section>
       <sidebar></sidebar>

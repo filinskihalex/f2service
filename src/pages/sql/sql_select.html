@@ -44,6 +44,7 @@
       <section>
         <div class="content">
           <h1>Простые запросы Select</h1>
+          <p>Все операторы записываться в верхнем регистре (По соглашению)</p>
           <UL>Операторы
             <li>SELECT - выбираем из каких столбцов будете осуществяляться выборка данных (* из всех стаблиц)</li>
             <li>FROM  -  из какой таблицы будут выбираться данные</li>
@@ -58,6 +59,8 @@
             <li>ORDER BY - Сортировка столбца по убыванию или возрастанирю (используться после WHERE) (ASC - по возрастанию , DESC - по убыванию)</li>
           </UL>
           <h2>Полная выборка</h2>
+          <p>Приводит к падению производительности при выборе больших обьмов данных. Желательно вместо * указываем именна столбцов по которым необходимо произвести выборку.</p>
+          <p>* Считаеться плохим тоном при написании кода. Используеться при разработке.</p>
           <div class="wrap_code">
             <div class="p">Выборка всех данных из таблицы product и вывод в консоль</div>
             <div class="code">SELECT *<br/>FROM products</div>
@@ -67,11 +70,15 @@
             <div class="p">Перемножаем данные одной колонки на другую</div>
             <div class="code">SELECT product_id, product_name, unit_price* units_in_stock<br/>FROM products</div>
           </div>
+          <p>При выборе столбцов указывем через запяную , на последнем не ставим</p>
+          <p>* арифметическая функция переумножаем</p>
           <h2>DISTINCT</h2>
           <div class="wrap_code">
             <div class="p">Вывод уникальных строк в столбце city</div>
-            <div class="code">SELECT DISTINCT city<br/>FROM employees</div>
+            <div class="code">SELECT DISTINCT city , country<br/>FROM employees</div>
           </div>
+          <p>Если необходимо вывести уникальные и множество столбцов указывем через запятую </p>
+          <P>DISTINCT - Всегда ставиться перед столбцом       </P>
           <h2>COUNT</h2>
           <div class="wrap_code">
             <div class="p">Вывод Колличества уникальных строк в столбце country</div>
@@ -111,6 +118,27 @@
           <div class="wrap_code">
             <div class="p"> Сортировка стран и городов по возрастанию</div>
             <div class="code">SELECT DISTINCT country, city<br/>FROM customers<br/>ORDER BY country, city</div>
+          </div>
+          <h2>Like</h2>
+          <div class="wrap_code">
+            <div class="p"> Фильтрация данных по шаблону Pattern Matching</div>
+            <div class="code">SELECT first_name, last_name<br/>FROM employees<br/>WHERE first_name LIKE 'A%'</div>
+          </div>
+          <h2>LIMIT</h2>
+          <div class="wrap_code">
+            <div class="p"> Вывод 10  записей</div>
+            <div class="code">SELECT first_name, last_name<br/>FROM employees<br/>LIMIT 10</div>
+          </div>
+          <p>Идет самым последним</p>
+          <h2>Check on NULL</h2>
+          <div class="wrap_code">
+            <div class="p"> Вывод записей с NULL</div>
+            <div class="code">SELECT costumer_id, ship_region <br/>FROM orders<br/>WHERE ship_region IS NULL</div>
+          </div>
+          <h2>GROUP BY</h2>
+          <div class="wrap_code">
+            <div class="p"> Вывод записей с NULL</div>
+            <div class="code">SELECT costumer_id, ship_region <br/>FROM orders<br/>WHERE ship_region IS NULL</div>
           </div>
         </div>
       </section>

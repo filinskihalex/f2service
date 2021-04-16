@@ -1,9 +1,9 @@
 extend ../../includes/_template.pug 
 
 append config
-        - var myTitle = 'не получается создать бд в PostgreSQL'
-        - var myDesc = ' ОШИБКА: исходная база "template1"'
-        - var mykeywords = ' ОШИБКА: исходная база "template1"'
+        - var myTitle = 'Создане базы и Таблицы'
+        - var myDesc = ' Создане базы и Таблицы"'
+        - var mykeywords = ' Создане базы и Таблицы"'
         - var csspatch = '../../css/'
         - var icopatch = '../../icons/'
         //- - var image = '../../img/git/new_project/'
@@ -11,26 +11,31 @@ append config
 
 append content
         .content
-                p ОШИБКА: исходная база "template1" занята другими пользователями DETAIL: Эта база данных используется ещё в 1 сеансе.
-
-                p Проблема простая и причина ошибки сразу указана в тексте ошибки:
-
-                p Эта база данных используется ещё в 1 сеансе.
-
-                p Посмотреть какие это сессии можно запросом:
-
-                p select * from pg_stat_activity where datname = 'template1';
-                p Принудительно их завершить запросом:
-
-                p select pg_terminate_backend(pid) from pg_stat_activity where datname = 'template1';
-                p После завершения всех сессий к этой базе create database успешно выполнится.
-
-                p Непонятна здесь может деталь, при чём тут какой-то template1 когда вы командуете, допустим,
-
-                p create database newdb;
-                p Где тут template1 и как для создания новой пустой БД мешают сессии в template1?
-
-                p Фокус здесь в том, что вообще-то create database не умеет создавать новые базы с нуля из ничего. Это умеет только initdb при инициализации всего экземпляра postgresql. А create database умеет только создавать копию базы указанную параметром template со значением по-умолчанию как раз template1. При этом, чтобы не получить несогласованное состояние файлов базы из-за параллельного изменения этой базы кем-то ещё create database требует, чтобы никто к этой template базе не был подключен вообще.
-                        
                 
-                a(href=htmlpatch+"sql/sql_select.html") Простые запросы с Select
+
+                h2 Создание Базы данных
+                .wrap_code
+                        .p Создает Базу данных testdb
+                        .code
+                                | CREATE DATABASE testdb
+                .wrap_code
+                        .p Удаление Базы данных Marka
+                        .code
+                                | DROP DATABASE testdb
+                .wrap_code
+                        .p Создание таблице в базе данных Marka
+                        .code
+                                | CREATE TABLE Marka
+                                br
+                                | (marka_id int PRIMARY KEY,  name varchar(32) NOT NULL );
+                
+                p marka_id - индетификатор в таблице. обычно используеться приставка id к наименованию таблицы
+                p int(integer) - Тип данных цифровой c целым значением
+                p PRIMARY KEY -  Уникальный ключь . данные в этом столбце не должны повторяться.
+                p varchar(32) - тип данных и числовой и текстовой с указанием длины.
+                p NOT NULL -  Не должен содержать ноль.
+                a(href=htmlpatch+"sql/tipdata.html") Типы Данных SQL 
+                .wrap_code
+                        .p Удаление Базы данных Marka
+                        .code
+                                | DROP TABLE Marka
